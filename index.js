@@ -26,25 +26,50 @@ const HOAX = {
 
 const fuzzyRule = [
 	{
-		p: 'rendah',
-		e: 'rendah',
-		h: 'tidak'
+		p: { jenis: 'rendah', value: undefined },
+		e: { jenis: 'rendah', value: undefined },
+		h: { jenis: 'tidak', value: undefined }
 	}, 
 	{
-		p: 'rendah',
-		e: 'sedang',
-		h: 'tidak'
+		p: { jenis: 'rendah', value: undefined },
+		e: { jenis: 'sedang', value: undefined },
+		h: { jenis: 'tidak', value: undefined }
 	}, 
 	{
-		p: 'tinggi',
-		e: 'sedang',
-		h: 'iya'
+		p: { jenis: 'rendah', value: undefined },
+		e: { jenis: 'tinggi', value: undefined },
+		h: { jenis: 'iya', value: undefined }
 	}, 
 	{
-		p: 'sedang',
-		e: 'tinggi',
-		h: 'iya'
+		p: { jenis: 'sedang', value: undefined },
+		e: { jenis: 'rendah', value: undefined },
+		h: { jenis: 'tidak', value: undefined }
+	}, 
+	{
+		p: { jenis: 'sedang', value: undefined },
+		e: { jenis: 'sedang', value: undefined },
+		h: { jenis: 'tidak', value: undefined }
 	},
+	{
+		p: { jenis: 'sedang', value: undefined },
+		e: { jenis: 'tinggi', value: undefined },
+		h: { jenis: 'iya', value: undefined }
+	},
+	{
+		p: { jenis: 'tinggi', value: undefined },
+		e: { jenis: 'rendah', value: undefined },
+		h: { jenis: 'iya', value: undefined }
+	},
+	{
+		p: { jenis: 'tinggi', value: undefined },
+		e: { jenis: 'sedang', value: undefined },
+		h: { jenis: 'iya', value: undefined }
+	},
+	{
+		p: { jenis: 'tinggi', value: undefined },
+		e: { jenis: 'tinggi', value: undefined },
+		h: { jenis: 'iya', value: undefined }
+	}
 ]
 
 const fuzzification = (crisp, category) => {
@@ -53,6 +78,9 @@ const fuzzification = (crisp, category) => {
 		sedang: 0,
 		tinggi: 0
 	}
+	let tmpArray = [
+		
+	]
 	// let result = undefined
 	if (crisp <= category[1]) {
 		temp.rendah = 1
@@ -83,6 +111,12 @@ console.log(JSON.stringify(fuzzification(74, PROVOKASI2), {}, 2))
 const sampleEmosi = fuzzification(97, EMOSI2)
 const sampleProvikasi = fuzzification(74, PROVOKASI2)
 
-const inference = (sampleEmosi, sampleProvikasi) => {
-	
+const inference = (emosi, provokasi) => {
+	for (var i = 0; i < 3; i++) {
+		for (var j = 0; j < 3; j++) {
+			
+			
+		}
+		
+	}
 }
