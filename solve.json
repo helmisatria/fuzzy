@@ -1,0 +1,52 @@
+[
+	{
+		"emosi": 58,
+		"provokasi": 63,
+		"hoax": true
+	},
+	{
+		"emosi": 68,
+		"provokasi": 70,
+		"hoax": true
+	},
+	{
+		"emosi": 64,
+		"provokasi": 66,
+		"hoax": true
+	},
+	{
+		"emosi": 57,
+		"provokasi": 77,
+		"hoax": true
+	},
+	{
+		"emosi": 77,
+		"provokasi": 55,
+		"hoax": true
+	},
+	{
+		"emosi": 98,
+		"provokasi": 64,
+		"hoax": false
+	},
+	{
+		"emosi": 91,
+		"provokasi": 59,
+		"hoax": true
+	},
+	{
+		"emosi": 50,
+		"provokasi": 95,
+		"hoax": true
+	},
+	{
+		"emosi": 95,
+		"provokasi": 55,
+		"hoax": true
+	},
+	{
+		"emosi": 27,
+		"provokasi": 79,
+		"hoax": true
+	}
+]
