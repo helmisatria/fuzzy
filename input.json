@@ -1,0 +1,102 @@
+[
+  {
+    "emosi": 97,
+    "provokasi": 74,
+    "hoax": true
+  },
+  {
+    "emosi": 36,
+    "provokasi": 85,
+    "hoax": true
+  },
+  {
+    "emosi": 63,
+    "provokasi": 43,
+    "hoax": false
+  },
+  {
+    "emosi": 82,
+    "provokasi": 90,
+    "hoax": true
+  },
+  {
+    "emosi": 71,
+    "provokasi": 25,
+    "hoax": false
+  },
+  {
+    "emosi": 79,
+    "provokasi": 81,
+    "hoax": true
+  },
+  {
+    "emosi": 55,
+    "provokasi": 62,
+    "hoax": false
+  },
+  {
+    "emosi": 57,
+    "provokasi": 45,
+    "hoax": false
+  },
+  {
+    "emosi": 40,
+    "provokasi": 65,
+    "hoax": false
+  },
+  {
+    "emosi": 57,
+    "provokasi": 45,
+    "hoax": false
+  },
+  {
+    "emosi": 77,
+    "provokasi": 70,
+    "hoax": true
+  },
+  {
+    "emosi": 68,
+    "provokasi": 75,
+    "hoax": true
+  },
+  {
+    "emosi": 60,
+    "provokasi": 70,
+    "hoax": false
+  },
+  {
+    "emosi": 82,
+    "provokasi": 90,
+    "hoax": true
+  },
+  {
+    "emosi": 40,
+    "provokasi": 85,
+    "hoax": false
+  },
+  {
+    "emosi": 80,
+    "provokasi": 68,
+    "hoax": true
+  },
+  {
+    "emosi": 60,
+    "provokasi": 72,
+    "hoax": false
+  },
+  {
+    "emosi": 50,
+    "provokasi": 95,
+    "hoax": true
+  },
+  {
+    "emosi": 100,
+    "provokasi": 18,
+    "hoax": false
+  },
+  {
+    "emosi": 11,
+    "provokasi": 99,
+    "hoax": true
+  }
+]
