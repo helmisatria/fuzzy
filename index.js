@@ -3,8 +3,8 @@ console.log('Tugas Program 2 - Fuzzy Logic')
 const INPUTVALUE = require('./input.json')
 const SOLVEVALUE = require('./solve.json')
 
-const EMOSI = [0, 10, 45, 50, 99, 100]
-const PROVOKASI = [0, 10, 30, 40, 96, 100]
+const EMOSI = [0, 25, 35, 70, 80, 97]
+const PROVOKASI = [0, 25, 40, 65, 80, 105]
 
 const HOAX = {
 	tidak: 40,
@@ -25,7 +25,7 @@ const fuzzyRule = [
 	{
 		p: { jenis: 'rendah', value: undefined },
 		e: { jenis: 'tinggi', value: undefined },
-		h: { jenis: 'tidak', value: undefined }
+		h: { jenis: 'iya', value: undefined }
 	}, 
 	{
 		p: { jenis: 'sedang', value: undefined },
@@ -45,12 +45,12 @@ const fuzzyRule = [
 	{
 		p: { jenis: 'tinggi', value: undefined },
 		e: { jenis: 'rendah', value: undefined },
-		h: { jenis: 'tidak', value: undefined }
+		h: { jenis: 'iya', value: undefined }
 	},
 	{
 		p: { jenis: 'tinggi', value: undefined },
 		e: { jenis: 'sedang', value: undefined },
-		h: { jenis: 'tidak', value: undefined }
+		h: { jenis: 'iya', value: undefined }
 	},
 	{
 		p: { jenis: 'tinggi', value: undefined },
@@ -96,9 +96,9 @@ const inference = (emosi, provokasi) => {
 		for (var j = 0; j < 3; j++) {
 			result[count]['p']['value'] = emosi[i]
 			result[count]['e']['value'] = provokasi[j]
-			result[count]['h']['value'] = Math.max(emosi[i], provokasi[j])
+			result[count]['h']['value'] = Math.min(emosi[i], provokasi[j])
 
-			count++
+			count++	
 		}
 	}
 	return result
@@ -111,12 +111,14 @@ const defuzzification = (fuzzyset) => {
 	for (var i = 0; i < fuzzyset.length; i++) {
 		let hoax = fuzzyset[i]['h']
 		
-		hoax['value'] && hoax['jenis'] == 'iya' ? IYA.push(hoax['value']) : 0
-		hoax['value'] && hoax['jenis'] == 'tidak' ? TIDAK.push(hoax['value']) : 0
-
+		hoax['jenis'] === 'iya' ? IYA.push(hoax['value']) : undefined
+		hoax['jenis'] === 'tidak' ? TIDAK.push(hoax['value']) : undefined
+		
 	}
-	const iya = Math.min(...IYA)
-	const tidak = Math.min(...TIDAK)
+	// console.log({ IYA, TIDAK })
+	
+	const iya = Math.max(...IYA)
+	const tidak = Math.max(...TIDAK)
 	return { iya, tidak }
 }
 
@@ -125,10 +127,10 @@ const testCase = (rules) => {
 
 	for (var i = 0; i < rules.length; i++) {	
 		const result = testSingle(rules[i]['emosi'], rules[i]['provokasi'], rules[i]['hoax'])
-		let note = result == rules[i]['hoax'] ? '' : 'salah'
+		let note = result ? '' : 'salah'
 		console.log(`BO${i+1} - E: ${rules[i].emosi}, P: ${rules[i].provokasi} = ${result} ${note}`)
-		result == rules[i]['hoax'] ? count++ : undefined
-		
+		result ? count++ : undefined
+		i === 19 ? console.log('---') : undefined
 	}
 	console.log(`Benar : ${count}`)
 	console.log(`Salah : ${rules.length-count}`)
@@ -140,15 +142,19 @@ const testSingle = (emosi, provokasi, expect) => {
 	let Provokasi = fuzzification(provokasi, PROVOKASI)
 	let Inference = inference(Emosi, Provokasi)
 	let Defuzi = defuzzification(Inference)
-	console.log(Defuzi['iya'])
-	console.log(Defuzi['tidak'])
+	// console.log(Defuzi['iya'])
+	// console.log(Defuzi['tidak'])
 		
-	return (Defuzi['iya'] > Defuzi['tidak']) ? 'iya': 'tidak'
+	return (Defuzi['iya'] > Defuzi['tidak']) === expect ? true: false
 }
 
-// testCase(INPUTVALUE)
+testCase(INPUTVALUE)
 // testCase(SOLVEVALUE)
 
-const test = testSingle(40, 65)
-
-console.log(test)
+// const emosi = fuzzification(27, EMOSI)
+// const provokasi = fuzzification(79, PROVOKASI)
+// const testInference = inference(emosi, provokasi)
+// const testDefuzzi = defuzzification(testInference)
+// console.log(JSON.stringify({ emosi, provokasi }, {}, 4))
+// console.log(JSON.stringify({ testInference }, {}, 2))
+// console.log(JSON.stringify({ testDefuzzi }, {}, 2))

@@ -107,7 +107,7 @@
 	{
 		"emosi": 68,
 		"provokasi": 70,
-		"hoax": true
+		"hoax": false
 	},
 	{
 		"emosi": 64,
@@ -127,7 +127,7 @@
 	{
 		"emosi": 98,
 		"provokasi": 64,
-		"hoax": true
+		"hoax": false
 	},
 	{
 		"emosi": 91,

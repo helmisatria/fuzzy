@@ -2,7 +2,7 @@
 	{
 		"emosi": 58,
 		"provokasi": 63,
-		"hoax": true
+		"hoax": false
 	},
 	{
 		"emosi": 68,
@@ -12,12 +12,12 @@
 	{
 		"emosi": 64,
 		"provokasi": 66,
-		"hoax": true
+		"hoax": false
 	},
 	{
 		"emosi": 57,
 		"provokasi": 77,
-		"hoax": true
+		"hoax": false
 	},
 	{
 		"emosi": 77,
@@ -42,11 +42,11 @@
 	{
 		"emosi": 95,
 		"provokasi": 55,
-		"hoax": true
+		"hoax": false
 	},
 	{
 		"emosi": 27,
 		"provokasi": 79,
-		"hoax": true
+		"hoax": false
 	}
 ]
