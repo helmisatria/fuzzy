@@ -1,21 +1,15 @@
 console.log('Tugas Program 2 - Fuzzy Logic')
 
 const INPUTVALUE = require('./input.json')
-const SOLVEVALUE = require('./solve.json')
 
-const EMOSI = [0, 25, 35, 70, 80, 97]
-const PROVOKASI = [0, 25, 40, 65, 80, 105]
-
-const HOAX = {
-	tidak: 40,
-	iya: 80
-}
+const EMOSI = [0, 25, 45, 70, 80, 97]
+const PROVOKASI = [0, 25, 40, 65, 80, 100]
 
 const fuzzyRule = [
 	{
 		p: { jenis: 'rendah', value: undefined },
 		e: { jenis: 'rendah', value: undefined },
-		h: { jenis: 'tidak', value: undefined }
+		h: { jenis: 'tidak', value: undefined } 	
 	}, 
 	{
 		p: { jenis: 'rendah', value: undefined },
@@ -127,13 +121,13 @@ const testCase = (rules) => {
 
 	for (var i = 0; i < rules.length; i++) {	
 		const result = testSingle(rules[i]['emosi'], rules[i]['provokasi'], rules[i]['hoax'])
-		let note = result ? '' : 'salah'
-		console.log(`BO${i+1} - E: ${rules[i].emosi}, P: ${rules[i].provokasi} = ${result} ${note}`)
+		// let note = result ? '' : 'salah'
+		console.log(`BO${i+1} - E: ${rules[i].emosi}, P: ${rules[i].provokasi} = ${result}`)
 		result ? count++ : undefined
 		i === 19 ? console.log('---') : undefined
 	}
-	console.log(`Benar : ${count}`)
-	console.log(`Salah : ${rules.length-count}`)
+	// console.log(`Benar : ${count}`)
+	// console.log(`Salah : ${rules.length-count}`)
 
 }
 
@@ -145,7 +139,9 @@ const testSingle = (emosi, provokasi, expect) => {
 	// console.log(Defuzi['iya'])
 	// console.log(Defuzi['tidak'])
 		
-	return (Defuzi['iya'] > Defuzi['tidak']) === expect ? true: false
+	return (Defuzi['iya'] > Defuzi['tidak']) ? 'ya': 'tidak'
+	// return (Defuzi['iya'] > Defuzi['tidak']) === expect ? 'ya': 'tidak'
+	// return (D)
 }
 
 testCase(INPUTVALUE)
