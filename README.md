@@ -1,6 +1,9 @@
 # Fuzzy Logic.
 
-### Fuzzy Input
+## Run: 
+```npm start```
+
+## Fuzzy Input
 
 Emosi :
   1. Rendah
@@ -16,7 +19,7 @@ Hoax :
   1. Ya
   2. Tidak
 
-Rules :
+## Fuzzy Rules :
 
 | Provokasi/Emosi           | Rendah        | Sedang        |  Tinggi  |
 | ----------- |:-------------:|:-------------:|:--------:|
